@@ -1,0 +1,79 @@
+/* styles/simulador.module.css */
+
+.recuadro {
+    background-color: white;
+    border-radius: 10px; /* Valor de redondeo */
+    padding: 20px; /* Espacio interno con el texto*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra (opcional) */
+    width: 100%; /* Ancho */
+    max-width: 500px; /* Ancho máximo */
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.subtitle {
+    font-weight: bold;
+    font-size: 18px;
+    padding-top: 5px;
+}
+
+.formulario-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.formulario-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submitButton {
+    display: block; /* Necesario para que margin: 0 auto; funcione */
+    margin: 0 auto; /* Centra horizontalmente */
+    width: auto; /* O un ancho específico, por ejemplo, 150px */
+    background-color: #ef4935;
+    color: white;
+    border-radius: 10px; /* Valor de redondeo */
+    padding: 10px; /* Espacio interno con el texto*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra (opcional) */
+}
+
+.enunciadoResultado {
+  margin-bottom: 10px;
+}
+
+p.error {
+  color: red;
+}
+
+/* Estilos adicionales para mejorar la presentación */
+.container > div {
+  margin-bottom: 20px;
+}
+
+.resultados {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.resultados strong {
+  display: block;
+  margin-bottom: 5px;
+}

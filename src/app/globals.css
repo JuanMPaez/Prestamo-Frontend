@@ -14,13 +14,22 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ededed;
+    --foreground: #3950a2;
   }
 }
 
 body {
-  background: var(--background);
+  background-image: linear-gradient(180deg, #ef483559 1%, #ef4935 90%);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.recuadro {
+  background-color: white;
+  border-radius: 10px; /* Valor de redondeo */
+  padding: 20px; /* Espacio interno con el texto*/
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra (opcional) */
+  width: 100%; /* Ancho */
+  max-width: 500px; /* Ancho máximo */
 }

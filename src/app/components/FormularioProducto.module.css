@@ -1,0 +1,48 @@
+.formulario-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
+    grid-gap: 10px; /* Espacio entre las columnas */
+    padding: 20px;
+  }
+  
+  .formulario-label {
+    text-align: right; /* Alinea los labels a la derecha */
+    padding-right: 10px; /* Espacio entre el label y el input */
+  }
+  
+  .formulario-input {
+    width: 100%; /* Ocupa todo el ancho de la columna */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .enviarBoton {
+    display: block; /* Necesario para que margin: 0 auto; funcione */
+    margin: 0 auto; /* Centra horizontalmente */
+    width: auto; /* O un ancho específico, por ejemplo, 150px */
+    background-color: #ef4935;
+    color: white;
+    border-radius: 10px; /* Valor de redondeo */
+    padding: 10px; /* Espacio interno con el texto*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra (opcional) */
+  }
+
+  .recuadro {
+    background-color: white;
+    border-radius: 10px; /* Valor de redondeo */
+    padding: 20px; /* Espacio interno con el texto*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra (opcional) */
+    width: 100%; /* Ancho */
+    max-width: 500px; /* Ancho máximo */
+  }
+
+  .msgError {
+    color: red;
+    margin: 5px;
+  }
+
+  .title {
+    font-weight: bold;
+    font-size: 20px;
+  }
