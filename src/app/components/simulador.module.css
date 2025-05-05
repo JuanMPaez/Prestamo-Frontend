@@ -77,3 +77,32 @@ p.error {
   display: block;
   margin-bottom: 5px;
 }
+
+.msgError {
+  color: red;
+  margin: 5px;
+}
+
+.principal {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.regresarBoton {
+  display: block; /* Necesario para que margin: 0 auto; funcione */
+  margin: 0 auto; /* Centra horizontalmente */
+  width: auto; /* O un ancho específico, por ejemplo, 150px */
+  background-color: #3950a2;
+  color: white;
+  border-radius: 10px; /* Valor de redondeo */
+  padding: 10px; /* Espacio interno con el texto*/
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra (opcional) */
+}
+
+.contenedorBotones {
+  display: flex;
+  justify-content: space-around;
+}
