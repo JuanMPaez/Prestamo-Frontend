@@ -63,7 +63,7 @@ p.error {
 }
 
 /* Estilos adicionales para mejorar la presentación */
-.container > div {
+.container > div { /* combinador de hijo selecciona los hijos directos de container*/
   margin-bottom: 20px;
 }
 

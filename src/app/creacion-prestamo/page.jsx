@@ -1,5 +1,5 @@
 // /creacion-prestamo/page.jsx
-"use client";
+"use client"; // Necesario para usar useState
 
 import React, { useState } from "react";
 import styles from "../components/FormularioProducto.module.css"; // Importa el nuevo archivo de estilos
@@ -41,7 +41,7 @@ function FormularioProducto() {
       return setError("Por favor, completa todos los campos.");
     }
     setError("");
-    // Aquí puedes enviar los datos del formulario a tu backend
+    // Datos del formulario al backend
     try {
       await crearPrestamo({
         name: productName,
@@ -51,7 +51,7 @@ function FormularioProducto() {
         minimumTerm: minTerm,
         maximumTerm: maxTerm,
       });
-      router.push("/");
+      router.push("/"); // Redirigir al inicio
     } catch (error) {
       console.error(error);
       setError("Error realizando la petición");

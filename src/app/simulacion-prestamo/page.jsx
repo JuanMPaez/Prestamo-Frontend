@@ -9,13 +9,13 @@ export default function Simulador() {
   const [prestamos, setPrestamos] = useState([]);
 
   useEffect(() => {
-    // Obtener los prestamos de la base de datos usando utils/db.js
+    // Obtener los prestamos de la base de datos
     const fetchPrestamos = async () => {
       const prestamosDB = await getPrestamos(); // Función de api/prestamos.js
       setPrestamos(prestamosDB);
     };
     fetchPrestamos();
-  }, []);
+  }, []); // Al estar vacío, significa que el efecto solo se ejecutará una vez, útil para cargar datos al inicializar el componente.
 
   return (
     <div className={styles["principal"]}>

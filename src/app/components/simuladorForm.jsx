@@ -1,38 +1,38 @@
-"use client";
+"use client"; // Necesario para useState
 import React, { useState } from "react";
 import styles from "./simulador.module.css";
 import { simularPrestamo } from "../api/prestamos";
-import Link from "next/link";
+import Link from "next/link"; // Para navegacion dentro de la aplicacion
 
 export default function SimuladorForm({ prestamos }) {
-  const [monto, setMonto] = useState("");
+  const [monto, setMonto] = useState(""); // Utiliza el hook useState para crear una variable de estado llamada monto y una función para actualizarla llamada setMonto. El valor inicial de monto es una cadena vacía ("").
   const [plazo, setPlazo] = useState("");
   const [prestamoSeleccionado, setPrestamoSeleccionado] = useState("");
   const [resultado, setResultado] = useState(null);
   const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError(null);
-    setResultado(null);
+    e.preventDefault(); // Previene el comportamiento predeterminado del formulario (que es recargar la página).
+    setError(null); // Limpia cualquier error previo
+    setResultado(null); // Limpia los resultados previos.
 
     const prestamo = prestamos.find(
-      (p) => p.id === parseInt(prestamoSeleccionado, 10)
+      (p) => p.id === parseInt(prestamoSeleccionado, 10) // Busca el tipo de préstamo seleccionado en la lista de préstamos utilizando el ID.
     ); //Parsear a entero
 
     if (
       !prestamo ||
       !monto ||
       !plazo ||
-      isNaN(parseInt(monto, 10)) ||
+      isNaN(parseInt(monto, 10)) || // Radix 10 => base 10 (Decimal)
       isNaN(parseInt(plazo, 10))
     ) {
       setError("Por favor, completa todos los campos correctamente.");
       return;
     }
 
-    const montoNumerico = parseInt(monto, 10);
-    const plazoNumerico = parseInt(plazo, 10);
+    const montoNumerico = parseInt(monto, 10); // Convierte el monto a un número entero.
+    const plazoNumerico = parseInt(plazo, 10); // Convierte el plazo a un número entero.
 
     if (
       montoNumerico < parseInt(prestamo.minimumamount) ||
@@ -79,17 +79,17 @@ export default function SimuladorForm({ prestamos }) {
         className={styles["formulario-input"]}
         id="prestamo"
         value={prestamoSeleccionado}
-        onChange={(e) => setPrestamoSeleccionado(e.target.value)}
+        onChange={(e) => setPrestamoSeleccionado(e.target.value)} // Actualiza el prestamo seleccionado
         required // Agrega validación requerida
       >
         <option value="">Selecciona un prestamo</option>
-        {prestamos.map((prestamo) => (
+        {prestamos.map((prestamo) => ( // mapea los prestamos y crea una opcion para cada uno en el menu desplegable
           <option key={prestamo.id} value={prestamo.id}>
             {prestamo.name}
           </option>
         ))}
       </select>
-      {prestamoSeleccionado !== "" && (
+      {prestamoSeleccionado !== "" && ( // Comprobar que se selecciono algo
         <>
           <div>
             <label className={styles["formulario-label"]} htmlFor="monto">
@@ -120,7 +120,8 @@ export default function SimuladorForm({ prestamos }) {
             />
           </div>
           {error && <p className={styles["msgError"]}>{error}</p>}
-        </>
+        </> // Fragmentos: Permiten agrupar elementos sin añadir nodos extra al DOM, mejorando la organización y el rendimiento.
+        // {error && <p className={styles["msgError"]}>{error}</p>} Muestra el mensaje de error si existe.
       )}
       <div className={styles.contenedorBotones}>
         <Link href={"/"} className={styles.regresarBoton}>
